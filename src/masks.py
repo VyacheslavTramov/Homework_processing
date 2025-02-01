@@ -1,7 +1,4 @@
 
-number = 7000792289606361
-
-
 def get_mask_card_number(card_number: str | int) -> str:
     '''Переводим номер карты в строку'''
     card_number = str(card_number)
@@ -14,11 +11,6 @@ def get_mask_card_number(card_number: str | int) -> str:
     return space
 
 
-print(get_mask_card_number(number))
-
-number_bank = 73654108430135874305
-
-
 def get_mask_account(bank_account: str | int) -> str:
     '''Переводим номер карты в строку'''
     bank_account = str(bank_account)
@@ -26,5 +18,3 @@ def get_mask_account(bank_account: str | int) -> str:
     # с помощью среза определяем последние 4 цифры + две звездочки впереди
     return f"**{bank_account[-4:]}"
 
-
-print(get_mask_account(number_bank))

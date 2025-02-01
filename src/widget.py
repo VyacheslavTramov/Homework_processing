@@ -1,9 +1,30 @@
+from masks import *
 
-def mask_account_card(account_card: str | int) -> str:
+input_card = input()
+def mask_account_card(card: str | int) -> str:
     '''Разделяем принимаемую строку на отдельные элементы'''
-    inp_list = [elem for elem in account_card.split()]
+    card_split = [elem for elem in card.split()]
 
-    for l in list:
-        list_len = len(inp_list)
+    number = card_split [-1]
+
+    if len (card_split) == 2:
+        if len(number) == 16:
+            new_number = get_mask_card_number(number)
+        else:
+            new_number = get_mask_account(number)
+        card_connect = f'{card_split[0]} {new_number}'
+    else:
+        new_number = get_mask_card_number(number)
+        card_connect = f'{card_split[0]} {card_split[1]} {new_number}'
+
+    return card_connect
+print(mask_account_card(input_card))
+
+
+def get_date(data_time: str | int) -> str:
+
+
+
+
 
 
