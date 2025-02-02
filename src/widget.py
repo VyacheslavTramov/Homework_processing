@@ -21,7 +21,15 @@ def mask_account_card(card: str | int) -> str:
 print(mask_account_card(input_card))
 
 
-def get_date(data_time: str | int) -> str:
+
+def get_date(number: str | int) -> str:
+
+    new_string = number[0:10]
+    to_share = [x for x in new_string.split("-")]
+    format_date = f'{to_share[-1]}.{to_share[-2]}.{to_share[0]}'
+
+
+
 
 
 
