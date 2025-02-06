@@ -7,10 +7,10 @@ date = [
 
 
 def filter_by_state(lst_: list) -> list:
-    """Проходим циклом по словарю"""
+    """Проходим циклом по словарю и формируем новый список по определенному ключу"""
     new_list = []
     for dict in lst_:
-        # по ключу "по умолчанию" создаем новый список
+
         key_list = dict.get("state")
         if key_list == "EXECUTED":
             new_list.append(dict)
