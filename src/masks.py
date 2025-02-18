@@ -2,10 +2,14 @@
 def get_mask_card_number(card_number: str | int) -> str:
     '''Переводим номер карты в строку'''
     card_number = str(card_number)
-
-    for i in range(6, 12):  # запускаем цикл по инждексу i от 6 до 11
-        # не учитываемая цифра в срезах заменяется на *
-        card_number = card_number[:i] + "*" + card_number[i + 1 :]
+    for letter in 'abcdefghijklmnopqrstuvwxyz':
+        if letter in card_number:
+            return 'ошибка ввода: буквенные символы в записи'
+    if len(card_number)==16:
+        for i in range(6, 12):  # запускаем цикл по инждексу i от 6 до 11
+            # не учитываемая цифра в срезах заменяется на *
+            card_number = card_number[:i] + "*" + card_number[i + 1 :]
+    else: return 'ошибка ввода: длина номера не соответсвует'
     # делим с помощью срезов номер на блоки
     space = f"{card_number[:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:]}"
     return space
