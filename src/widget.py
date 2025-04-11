@@ -1,12 +1,12 @@
-
 from src.masks import get_mask_account, get_mask_card_number
 
 # card_input= input()
 
+
 def mask_account_card(card: str | int) -> str:
     card = str(card)  # Преобразуем входные данные в строку
-    if ' ' not in card:  # Проверяем, есть ли пробелы в строке
-        return 'Incorrect'
+    if " " not in card:  # Проверяем, есть ли пробелы в строке
+        return "Incorrect"
 
     """Разделяем принимаемую строку на отдельные элементы"""
     card_split = [elem for elem in card.split()]
@@ -40,5 +40,3 @@ def get_date(number: str | int) -> str:
 
 
 print(get_date("2024-03-11T02:26:18.671407"))
-
-

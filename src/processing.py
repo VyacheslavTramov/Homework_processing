@@ -9,15 +9,16 @@ date = [
 def filter_by_state(lst_: list, state: str = "EXECUTED") -> list:
     """Проходим циклом по словарю"""
     new_list = []
-    for dict in lst_:
+    for dict_item in lst_:
         # по ключу "по умолчанию" создаем новый список
-        key_list = dict.get("state")
+        key_list = dict_item.get("state")
         if key_list == state:
-            new_list.append(dict)
+            new_list.append(dict_item)
     return new_list
 
 
 print(filter_by_state(date))
+
 
 def sort_by_date(items, reverse=True):
     return sorted(items, key=lambda x: (x["date"], x["id"]), reverse=reverse)
