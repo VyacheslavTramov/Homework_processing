@@ -1,9 +1,13 @@
-from masks import get_mask_account, get_mask_card_number
+from src.masks import get_mask_account, get_mask_card_number
 
-input_card = input()
+# card_input= input()
 
 
 def mask_account_card(card: str | int) -> str:
+    card = str(card)  # Преобразуем входные данные в строку
+    if " " not in card:  # Проверяем, есть ли пробелы в строке
+        return "Incorrect"
+
     """Разделяем принимаемую строку на отдельные элементы"""
     card_split = [elem for elem in card.split()]
 
@@ -22,14 +26,14 @@ def mask_account_card(card: str | int) -> str:
     return card_connect
 
 
-print(mask_account_card(input_card))
+# print(mask_account_card(card_input))
 
 
 def get_date(number: str | int) -> str:
     """Делаем срез нужной нам части вводимой строки"""
     new_string = number[0:10]
     to_share = [x for x in new_string.split("-")]  # разделяем срез на элементы
-    # преобразовываем элементы в нужнй формат
+    # преобразовываем элементы в нужный формат
     format_date = f"{to_share[-1]}.{to_share[-2]}.{to_share[0]}"
 
     return format_date
