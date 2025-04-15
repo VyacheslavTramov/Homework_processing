@@ -15,7 +15,6 @@ def test_get_mask_card_number(input_value, expected_output):
     result = get_mask_card_number(input_value)
     assert result == expected_output
 
-
 @pytest.mark.parametrize(
     "input_value, expected_output",
     [
@@ -66,3 +65,4 @@ def mask_account():
     def test_invalid_get_mask_card_number(invalid_card_numbers):
         for number, expected_output in invalid_card_numbers:
             assert get_mask_card_number(number) == expected_output
+

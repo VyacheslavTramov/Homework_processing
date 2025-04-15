@@ -53,3 +53,4 @@ def valid_date_string():
 def invalid_date_string():
     """Фикстура с недействительной датой"""
     return "11-03-2024 02:26:18"
+
