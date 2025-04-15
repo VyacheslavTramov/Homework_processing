@@ -6,13 +6,13 @@ date = [
 ]
 
 
-def filter_by_state(lst_: list) -> list:
+def filter_by_state(lst_: list, state = "EXECUTED") -> list:
     """Проходим циклом по словарю"""
     new_list = []
     for dict in lst_:
         # по ключу "по умолчанию" создаем новый список
         key_list = dict.get("state")
-        if key_list == "EXECUTED":
+        if key_list == state:
             new_list.append(dict)
     return new_list
 
