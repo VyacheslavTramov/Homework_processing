@@ -1,8 +1,5 @@
 from src.masks import get_mask_account, get_mask_card_number
 
-# card_input= input()
-
-
 def mask_account_card(card: str | int) -> str:
     card = str(card)  # Преобразуем входные данные в строку
     if " " not in card:  # Проверяем, есть ли пробелы в строке
@@ -26,9 +23,6 @@ def mask_account_card(card: str | int) -> str:
     return card_connect
 
 
-# print(mask_account_card(card_input))
-
-
 def get_date(number: str | int) -> str:
     """Делаем срез нужной нам части вводимой строки"""
     new_string = number[0:10]
@@ -39,4 +33,3 @@ def get_date(number: str | int) -> str:
     return format_date
 
 
-print(get_date("2024-03-11T02:26:18.671407"))
