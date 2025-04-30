@@ -1,6 +1,4 @@
-from masks import get_mask_account, get_mask_card_number
-
-input_card = input()
+from .masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(card: str | int) -> str:
@@ -22,8 +20,6 @@ def mask_account_card(card: str | int) -> str:
     return card_connect
 
 
-print(mask_account_card(input_card))
-
 
 def get_date(number: str | int) -> str:
     """Делаем срез нужной нам части вводимой строки"""
@@ -35,4 +31,3 @@ def get_date(number: str | int) -> str:
     return format_date
 
 
-print(get_date("2024-03-11T02:26:18.671407"))
