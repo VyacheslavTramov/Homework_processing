@@ -1,5 +1,5 @@
 import pytest
-from src.generators import filter_by_currency, card_number_generator
+from src.generators import filter_by_currency, card_number_generator, transaction_descriptions
 
 
 def test_filter_by_currency(transactions_data):
@@ -41,16 +41,25 @@ def test_filter_by_currency_empty_list(currency):
         next(filtered)
 
 
-def test_transaction_descriptions_correct(transactions_data):
+def test_transaction_descriptions(transactions_data):
     '''Проверяет, что функция возвращает корректные описания для каждой транзакции'''
-    empty_list = []
-    for i in transactions_data:
-        disk = i.get("description")
-        from_org = i.get("from")
-        to_org = i.get("to")
-        conclusion = f"{disk} от: {from_org} к: {to_org}"
-        empty_list.append(conclusion)
-    assert empty_list
+    descriptions = transaction_descriptions(transactions_data)
+
+    assert next(descriptions) == "Перевод организации"
+    assert next(descriptions) == "Перевод со счета на счет"
+    assert next(descriptions) == "Перевод со счета на счет"
+    assert next(descriptions) == "Перевод с карты на карту"
+    assert next(descriptions) == "Перевод организации"
+
+    with pytest.raises(StopIteration):
+        next(descriptions)
+
+def test_empty_transactions():
+    empty_transactions = []
+    empty = transaction_descriptions(empty_transactions)
+
+    with pytest.raises(StopIteration):
+        next(empty)
 
 
 def test_card_number_generator_valid_range():
