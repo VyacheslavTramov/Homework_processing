@@ -77,4 +77,5 @@ def test_sort_by_date_ascending(transaction_data):
         assert datetime.fromisoformat(sorted_transactions[i]["date"]) <= datetime.fromisoformat(
             sorted_transactions[i + 1]["date"]
         )
+        )
 
