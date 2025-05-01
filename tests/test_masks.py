@@ -65,3 +65,5 @@ def mask_account():
     def test_invalid_get_mask_card_number(invalid_card_numbers):
         for number, expected_output in invalid_card_numbers:
             assert get_mask_card_number(number) == expected_output
+            assert get_mask_card_number(number) == expected_output
+

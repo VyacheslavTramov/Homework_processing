@@ -17,6 +17,12 @@ def filter_by_state(lst_: list, state = "EXECUTED") -> list:
             new_list.append(dict_item)
     return new_list
 
+        key_list = dict.get("state")
+        if key_list == state:
+            new_list.append(dict)
+    return new_list
+
+print(filter_by_state(date))
 
 def sort_by_date(items, reverse=True):
     return sorted(items, key=lambda x: (x["date"], x["id"]), reverse=reverse)
