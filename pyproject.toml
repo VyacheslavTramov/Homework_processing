@@ -1,9 +1,9 @@
 [project]
-name = "pythonproject1"
+name = "pythonproject-1"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Вячеслав Трамов",email = "tram7070@yandex.ru"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
@@ -15,10 +15,13 @@ dependencies = [
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.group.lint.dependencies]
+[tool.poetry.group.dev.dependencies]
 flake8 = "^7.1.1"
-black = "^24.10.0"
-isort = "^5.13.2"
+pytest = "^8.3.4"
+black = "^25.1.0"
+isort = "^6.0.0"
+mypy = "^1.15.0"
+pytest-cov = "^6.1.1"
 
 [tool.black]
 # Максимальная длина строки
@@ -32,13 +35,10 @@ line_length = 119
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.14.1"
+pytest-cov = "^6.1.1"
 
 [tool.mypy]
 disallow_untyped_defs = true
 no_implicit_optional = true
 warn_return_any = true
 exclude = 'venv'
-
-
-
-
